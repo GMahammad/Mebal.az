@@ -1,0 +1,415 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Css/Style.css">
+    <link rel="stylesheet" href="~/Css/bootstrap.css">
+    <link rel="stylesheet" href="~/Vendors/Slick/slick-theme.css">
+    <link rel="stylesheet" href="~/Vendors/Slick/slick.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mebelan, Mebel elanları-@ViewData["Title"]</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Martel:wght@600&display=swap"
+          rel="stylesheet">
+    <style>
+        #top {
+            position: fixed;
+            right: 3%;
+            bottom: 5%;
+            z-index: 70;
+            background-color: orange;
+            border-radius: 100%;
+            border: 2px solid transparent;
+            transition: .3s;
+            width: 50px;
+            height: 50px;
+        }
+        .top-ico{
+            color:white;
+            font-size:30px;
+        }
+      
+            #top:hover {
+                background-color:white;
+                border:2px solid orange;
+            }
+        #top:hover .top-ico{
+            color:orange;
+        }
+        .cat-active a {
+            color: orange !important
+        }
+        
+        .aactive{
+            background-color:orange !important;
+        }
+        .nextb{
+            font-size:20px;
+            border-radius:100%;
+            background-color:gainsboro;
+            opacity:0.8;
+            padding:10px 15px;
+            
+        }
+        .butac {
+            font-size: 20px;
+            border-radius: 100%;
+            background-color: gainsboro;
+            padding: 10px 15px;
+            opacity: 0.8;
+        }
+        
+            .butac:hover {
+                color: white;
+                background-color: orange;
+            }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 17px;
+            border-radius: 15px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            background-color: #3b3b3b;
+            border-radius: 15px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background-color: orange;
+            border-radius: 25px;
+        }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background-color: darkorange;
+            }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <div class="top-head">
+            <div class="container">
+                <div class="row">
+                    <div class="aaall">
+                        <div class="top-mail">
+                            <div class="iii">
+                                <ul>
+                                    <li>
+                                        <i class="fab fa-facebook"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fab fa-whatsapp"></i>
+
+                                    </li>
+                                    <li>
+                                        <i class="fab fa-instagram"></i>
+
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="pppp">
+                                <a href="#">Mebelan@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="top-acc d-flex">
+                            <div class="top-log">
+                                <a href="/auth/login">Daxil ol</a>
+                            </div>
+                            <div class="tol"></div>
+
+                            <div class="top-reg">
+                                <a href="/auth/registration">Qeydiyyat</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="all-head">
+                <div class="col-lg-3 col-md-4 col-sm-4">
+                    <div class="head-logo">
+                        <a style="text-decoration: none;" href="/">
+                            <h1>Meb<span class="yyy">elan</span></h1>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-7 col-sm-6">
+                    <div class="search-input">
+                        <form class="action-form" action="/advertisement">
+                            <input name="searchTerm" type="text" placeholder="Axtarış...">
+                            <i class="fas fa-search"></i>
+                            <button class="d-none" type="submit"></button>
+                        </form>
+
+                    </div>
+                    <div class="input-sm">
+                        <input type="text" placeholder="Axtarış...">
+                        <i class="fas fa-search"></i>
+                        <i id="head-bar-clicka" class="fas fa-bars"></i>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-1 col-sm-2">
+
+                    <div class="head-items">
+                        <a href="/advertisement">
+                            <i class="fas fa-tasks"></i>
+                        </a>
+                        <a href="/auth/login">
+                            <i class="fas fa-user-circle ab "></i>
+                        </a>
+                    </div>
+                    <div class="head-bars pl-5 ">
+                        <i id="head-bar-click" class="fas fa-bars"></i>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <section class="side-menu">
+        <div class="side-menu-all">
+            <div class="clickt">
+                <i id="click-times" class="fas fa-times"></i>
+
+            </div>
+            <ul>
+                <li>
+                    <a class="category-click" href="#">
+                        Kateqoriyalar<i class="fas fa-chevron-down pl-1"></i>
+                        <div class="category-down">
+                            <ul>
+
+
+                                <li><a href="#">Dolablar  </a><img src="~/img/icons8-sliding-door-closet-48.png" alt=""></li>
+                                <li><a href="#">Divanlar</a> <img src="~/img/icons8-living-room-48.png" alt=""></li>
+                                <li><a href="#">Kreslolar</a> <img src="~/img/icons8-armchair-48.png" alt=""></li>
+                                <li><a href="#">Stollar</a><img src="~/img/icons8-table-144.png" alt=""></li>
+                                <li><a href="#">Stullar</a><img src="~/img/icons8-chair-48.png" alt=""></li>
+                                <li><a href="#">Qonaq otağı dəsti</a><img src="~/img/icons8-interior-48.png" alt=""></li>
+                                <li><a href="#">Yataq Otağı dəsti</a><img src="~/img/icons8-bedroom-interior-48.png" alt=""></li>
+                                <li><a href="#">Uşaq Otağı dəsti</a><img src="~/img/icons8-bunk-bed-48.png" alt=""></li>
+                            </ul>
+                        </div>
+                    </a>
+                </li>
+                <hr>
+                <li><a href="#">Yeni elanlar</a></li>
+                <hr>
+                <li>
+                    <a class="brand-click" href="#">
+                        Mağazalar<i class="fas fa-chevron-down pl-1"></i>
+                        <div class="brand-down">
+                            <ul>
+                                <li><a href="#">Embawood</a></li>
+                                <li><a href="#">Madeyra</a></li>
+                                <li><a href="#">Kilim</a></li>
+                                <li><a href="#">Saloglu</a></li>
+                                <li><a href="#">Istikbal</a></li>
+                                <li><a href="#">Bellona</a></li>
+
+                            </ul>
+                        </div>
+                    </a>
+                </li>
+                <hr>
+                <li><a href="">Endirimli məhsullar</a></li>
+                <hr>
+                <li><a href="#">Əlaqə</a></li>
+
+            </ul>
+
+        </div>
+    </section>
+    <section class="nav-menu">
+        <div class="dropdown ">
+
+            <ul class="d-flex">
+                <li class="but">
+                    Kateqoriyalar<i class="fas fa-chevron-down pl-1 a"></i>
+                    <div class="category-drop">
+                        <ul>
+
+                            <li><a href="#">Dolablar  </a><img src="~/img/icons8-sliding-door-closet-48.png" alt=""></li>
+                            <li><a href="#">Divanlar</a> <img src="~/img/icons8-living-room-48.png" alt=""></li>
+                            <li><a href="#">Kreslolar</a> <img src="~/img/icons8-armchair-48.png" alt=""></li>
+                            <li><a href="#">Stollar</a><img src="~/img/icons8-table-144.png" alt=""></li>
+                            <li><a href="#">Stullar</a><img src="~/img/icons8-chair-48.png" alt=""></li>
+                            <li><a href="#">Qonaq otağı dəsti</a><img src="~/img/icons8-interior-48.png" alt=""></li>
+                            <li><a href="#">Yataq Otağı dəsti</a><img src="~/img/icons8-bedroom-interior-48.png" alt=""></li>
+                            <li><a href="#">Uşaq Otağı dəsti</a><img src="~/img/icons8-bunk-bed-48.png" alt=""></li>
+                        </ul>
+
+                    </div>
+                </li>
+
+
+                <li>
+                    <a href="/advertisement?sortBy=3">Yeni elanlar</a>
+                </li>
+                <li class="buta">
+                    Mağazalar
+                    <i class="fas fa-chevron-down a"></i>
+
+                    <div class="brand-drop">
+                        <ul>
+                            <li><a href="#">Embawood</a></li>
+                            <li><a href="#">Madeyra</a></li>
+                            <li><a href="#">Kilim</a></li>
+                            <li><a href="#">Saloglu</a></li>
+                            <li><a href="#">Istikbal</a></li>
+                            <li><a href="#">Bellona</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href='/#disa'>
+                        Endirimli məhsullar
+                    </a>
+
+                </li>
+
+                <li>
+                    <a href='#footera'>Əlaqə</a>
+                </li>
+                <li><a href="/newadvertisement" class="new-adv">Elan Yerləşdir</a></li>
+            </ul>
+            <button style="outline:none" id="top"><i class="top-ico fas fa-angle-up"></i></button>
+
+        </div>
+
+    </section>
+    <div class="create-adv">
+        <a href="/newadvertisement">Elan Yerləşdirin</a>
+
+    </div>
+
+    @RenderBody()
+
+    <footer id="footera">
+        <div class="container">
+            <div class="all-footer">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-6">
+                        <div class="about">
+                            <h3>
+                                Meb<span>elan</span>.az
+                            </h3>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-angle-right"></i>Qaydalar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-angle-right"></i>Gizlilik və Dəqiqlik
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-angle-right"></i>Yardım
+                                    </a>>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-6 service">
+                        <h3>Xidmətlərimiz</h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-angle-right"></i>Qeydiyyat
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-angle-right"></i>Daxil ol
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-angle-right"></i>Şəxsi Kabinet
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-angle-right"></i>Məhsulların idarəsi
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 contact col-6">
+                        <h3>Əlaqə</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum quae quam,
+                            repellat itaque aut nobis nesciunt!
+                        </p>
+                        <ul class="footer-items">
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 message col-6">
+                        <h3 class="pl-3">Sualınız var?</h3>
+                        <textarea name="" id="" cols="5" rows="3" placeholder="Bizə yazın..."></textarea>
+                        <button>
+                            Göndər
+                            <i class="far fa-share-square"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <span>Created by <a href="#">MIK</a> group</span>
+
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="~/Vendors/Jquery/jquery-3.5.1.min.js"></script>
+    <script src="~/Vendors/Slick/slick.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="~/Js/Script.js"></script>
+    <script src="~/Js/Detail.js"></script>
+    <script src="~/Js/Detailed-search.js"></script>
+    <script src="~/Js/Login.js"></script>
+    <script src="~/Js/Register.js"></script>
+    <script src="~/Js/New-Adv.js"></script>
+    <script src="~/Js/Search.js"></script>
+    @await RenderSectionAsync("Scripts",required:false)
+
+
+</body>
+</html>

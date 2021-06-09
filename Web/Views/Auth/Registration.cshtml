@@ -1,0 +1,61 @@
+﻿@model RegisterVM
+<section class="register-panel">
+    <div class="row">
+        <div class="col-5 col-lg-7 col-md-5 col-sm-5">
+            <div class="back-img">
+                <i class="far fa-user"></i>
+                <div class="reg-circle"></div>
+            </div>
+        </div>
+        <div class="panel col-7 col-lg-5 col-md-7 col-sm-7">
+            <div class="all-register-right py-5">
+                <h1>Qeydiyyat</h1>
+                <div class="line"></div>
+                <form method="post">
+                    <div class="name-reg">
+
+                        <div class="name pt-2">
+                            <h4 class="pr-1 focusad">Ad </h4>
+                            <input id="myname" type="text" asp-for="Firstname" placeholder="Adınız">
+                            <i id="namealert" class="target fas fa-exclamation-circle"></i>
+                        </div>
+                        
+                         <div class="phonenumber pt-3">
+            <h4 class="pr-1">Telefon </h4>
+            <input id="phone" type="tel" asp-for="PhoneNumber" placeholder="Əlaqə nömrəniz">
+            <i id="phonealert" class="target fas fa-exclamation-circle"></i>
+
+        </div>
+                        <div class="email pt-3">
+                            <h4 class="pr-1">E-poçt </h4>
+                            <input id="mail" type="email" asp-for="Email" placeholder="Electron poçtunuz">
+                            <i id="mailalert" class="target fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="pass pt-3">
+                            <h4 id="sif" class="pr-1">Şifrə </h4>
+                            <i class="eye far fa-eye" id="togglepass"></i>
+                            <input type="password" asp-for="Password" id="mypass" minlength="5">
+
+
+                        </div>
+                        <div class="registrationFormAlert pt-1" style="color:red; font-size: 18px;" id="CeckPasswordMatch"></div>
+
+                        <div class="conpass pt-3">
+                            <h4 id="sir" class="pr-1">Şifrənizi təsdiq edin </h4>
+                            <i class="eye far fa-eye" id="togyourpass"></i>
+                            <input type="password" asp-for="ConfirmPassword" id="yourpass">
+
+
+                        </div>
+                        <div class="registrationFormAlert pt-1" style="color:red; font-size: 18px;" id="CheckPasswordMatch"></div>
+                    </div>
+                    <button class="reg-button" type="submit">Qeydiyyat</button>
+
+                </form>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>

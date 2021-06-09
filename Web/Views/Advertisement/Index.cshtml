@@ -1,0 +1,289 @@
+﻿@model SearchVM
+
+<section class="top-page">
+
+    <div class="container">
+        <div class="all-top-page">
+
+            <div class="left-page">
+                <h1>Axtarış</h1>
+            </div>
+            <div class="right-page d-flex">
+                <a href="Home Page.html">
+                    Ana səhfə
+                </a>
+                <span>
+                    / Axtarış
+                </span>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<section class="filter-page">
+    <div class="container">
+
+        <div class="row ">
+            <div class=" all-filter col-lg-3 col-md-3 col-sm-3 col-3 p-0 m-0">
+
+                <div class="category-filter">
+                    <h3>Kateqoriyalar</h3>
+                    <div class="line"></div>
+
+                    <ul>
+                        <li class="@(Model.CategoryID==null?"cat-active":"")">
+                            <a href="/advertisement">Bütün elanlar<span>(@Model.AllAdvertisements.Count())</span></a>
+                        </li>
+                        @foreach (var categ in Model.Categories)
+                        {
+                            <li class="@(Model.CategoryID==categ.ID?"cat-active":"")">
+                                <a href="@Url.Action("index","advertisement", new {categoryID=categ.ID,sortBy=Model.SortBy,searchTerm=Model.SearchTerm})">@categ.Name<span>(@categ.Advertisements.Count)</span></a>
+                            </li>
+                        }
+                    </ul>
+                    <hr>
+
+                </div>
+                <input type="hidden" value="">
+                <div class="price-filter">
+                    <h3>Qiymət</h3>
+                    <div class="line"></div>
+                    <div class="panel">
+                        <div class="price-slider mt-2">
+                            <span>
+                                <input class="mr-1" type="number" value="0" min="0" max="@Model.AllAdvertisements.Max(x=>x.Price)" />-
+                                <input class="ml-1" type="number" value="@Model.AllAdvertisements.Max(x=>x.Price)" min="0" max="@Model.AllAdvertisements.Max(x=>x.Price)" />
+                            </span>
+                            <div class=" aabd d-flex p-0 mt-3">
+
+                                <input class="mr-1" value="0" min="0" max="@Model.AllAdvertisements.Max(x=>x.Price)" step="10" type="range" />
+                                <input class=" ml-1" value="@Model.AllAdvertisements.Max(x=>x.Price)" min="0" max="@Model.AllAdvertisements.Max(x=>x.Price)" step="10" type="range" />
+                            </div>
+
+                            <svg width="100%" height="24"></svg>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="color-filter">
+                    <h3>Rəng</h3>
+                    <div class="line mb-2"></div>
+                    <ul>
+                        <li>
+                            <button class="color1"></button>
+                            <a href="#">Qara</a>
+
+                            </a>
+                        </li>
+                        <li>
+                            <button class="color2"></button>
+                            <a href="#">Krem</a>
+
+                            </a>
+                        </li>
+                        <li>
+                            <button class="color3"></button>
+                            <a href="#">Qızılı</a>
+                        </li>
+                        <li>
+                            <button class="color4"></button>
+                            <a href="#">Gümüşü</a>
+                        </li>
+                        <li>
+                            <button class="color5"></button>
+                            <a href="#">Qəhvəyi</a>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+
+                </div>
+                <div class="marka-filter">
+                    <h3>Marka və sexlər</h3>
+                    <div class="line mb-2"></div>
+                    <ul>
+                        @foreach (var store in Model.Stores)
+                        {
+                            <li>
+                                <a href="#">@store.Name<input type="checkbox" name="" id=""></a>
+                            </li>
+                        }
+
+
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class=" col-lg-9 col-12 col-md-12 col-sm-12 ">
+
+                <div class="sort-pro">
+                    <p>Axtarışa əsasən @Model.Count məhsul mövcuddur.</p>
+                    <div class="sort-select">
+                        <h6>Sıralama</h6>
+                        <i class="fas fa-chevron-down pb-1"></i>
+                        <div class="sort-select-op">
+                            <ul>
+
+                                <li>
+                                    <a href="@Url.Action("index","advertisement", new {sortby=3,categoryID=Model.CategoryID,searchTerm=Model.SearchTerm})">
+                                        <option value="@Convert.ToInt32(SortByEnum.AToZ)">Tarix, Yenidən köhnəyə</option>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="@Url.Action("index","advertisement", new {sortby=1,categoryID=Model.CategoryID,searchTerm=Model.SearchTerm})">
+                                        <option value="@Convert.ToInt32(SortByEnum.PriceHighToLow)">Qiymət, çoxdan aza</option>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("index","advertisement", new {sortby=2,categoryID=Model.CategoryID,searchTerm=Model.SearchTerm})">
+                                        <option value="@Convert.ToInt32(SortByEnum.PriceLowToHigh)">Qiymət, azdan çoxa</option>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <a class="detailed-search" href="Detailed-search.html">Ətraflı Axtarış</a>
+
+                <div class="col-lg-12">
+                    <div class="search-adv-res">
+
+                        <div class="row">
+                            @foreach (var advert in Model.Advetisements)
+                            {
+                                <div class="col-lg-4 col-lg-4 col-sm-6 col-md-4 col-12">
+                                    <a href="/advertisement/details/@advert.ID">
+                                        <div class="adv-frame">
+                                            <div class="adv-photo">
+                                                <img src="~/img/@advert.AdvertisementPictures[0].Picture.URL" alt="">
+                                                <img class="sec-photo" src="~/img/@advert.AdvertisementPictures[1].Picture.URL" alt="">
+                                                <div class="advert-price" style="width:40%">
+                                                    <h style="white-space:nowrap; position:absolute; bottom:10%; color:white; right:0%; padding:7px 10px; background-color:orange; border-radius:10px 0 0 10px;">@advert.Price ₼</h>
+                                                </div>
+                                            </div>
+                                            <div class="adv-desc">
+                                                <h5>
+                                                    @advert.AdvertName
+                                                </h5>
+                                                <h6>
+                                                    İstehsalçı :
+                                                    <a href="#">@advert.AdvHost</a>
+                                                </h6><br>
+                                                <p>@advert.Posttime.ToShortDateString(),@advert.Cities.CityName </p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="pagination py-4" style="display:flex; justify-content:center; align-items:center;">
+                    @if (Model.Pager.CurrentPage == 1)
+                    {
+                        <a class=" disabled pr-2" style="font-size:25px;opacity:0.4; color:black;"> <i class=" nextb fas fa-angle-left"></i></a>
+
+                    }
+                    else
+                    {
+                        <a class="pr-2" href="@Url.Action("index", "advertisement", new { pageNo=Model.Pager.CurrentPage-1,categoryID=Model.CategoryID,sortBy=Model.SortBy,searchTerm=Model.SearchTerm })" style="font-size:25px; color:black;"> <i class="butac fas fa-angle-left"></i></a>
+
+                    }
+
+
+                    <div class="pagenumbers ">
+                        <ul class="d-flex" style="padding:0; margin:0;">
+                            @for (int ownpage = Model.Pager.StartPage; ownpage < Model.Pager.EndPage + 1; ownpage++)
+                            {
+                                var aactive = ownpage == Model.Pager.CurrentPage ? "aactive" : string.Empty;
+
+                                <li style="padding:0 7px; list-style:none;">
+                                    <a href="@Url.Action("Index","advertisement", new { pageNo=ownpage,categoryID=Model.CategoryID,sortBy=Model.SortBy,searchTerm=Model.SearchTerm})" class="@aactive" style="border-radius:50px; background-color:gainsboro; opacity:0.8; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 10px 18px; color:black;  font-size:20px;">@ownpage</a>
+                                </li>
+
+
+                            }
+
+                        </ul>
+                    </div>
+                    @if (Model.Pager.CurrentPage == Model.Pager.EndPage)
+                    {
+                        <a class=" disabled pl-2" style="font-size:25px;opacity:0.4; color:black;"> <i class=" nextb fas fa-angle-right"></i></a>
+
+                    }
+                    else
+                    {
+                        <a class="pl-2" href="@Url.Action("index", "advertisement", new { pageNo=Model.Pager.CurrentPage+1,categoryID=Model.CategoryID,sortBy=Model.SortBy,searchTerm=Model.SearchTerm })" style="font-size:25px; color:black;"> <i class=" butac fas fa-angle-right"></i></a>
+
+                    }
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+@*<section class="Marka-slider">
+        <div class="mmm">
+
+            <div class="mark">
+                <div class="col-3">
+                    <a href="#"></a>
+                    <img src="~/Img/826_kilimmobilya.jpg" alt="">
+
+                </div>
+            </div>
+            <div class="mark">
+                <div class="col-3">
+                    <a href="#"><img src="~/Img/bellona.svg" alt=""></a>
+
+                </div>
+            </div>
+            <div class="mark">
+                <div class="col-3">
+                    <a href="#">
+                        <img src="~/Img/saloglu-mebel_1448871755.jpg" alt="">
+                    </a>
+
+                </div>
+            </div>
+            <div class="mark">
+                <div class="col-3">
+                    <a href="#">
+                        <img src="~/Img/istikbal.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="mark">
+                <div class="col-3">
+                    <a href="#">
+                        <img src="~/Img/Madeyra3.png" alt="">
+                    </a>
+
+                </div>
+            </div>
+            <div class="mark">
+                <div class="col-3">
+                    <a href="#">
+                        <img src="~/Img/90879f3a81d1c7bf320dd15cdf7609c2.png" alt="">
+
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>*@

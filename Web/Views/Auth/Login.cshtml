@@ -1,0 +1,37 @@
+﻿@model LoginVM 
+<section class="choose">
+    <div class="all-logorreg">
+        <div class="log-reg">
+            <button id="logi">Hesabınıza daxil olun</button>
+            <span>Hesabınız varsa..</span>
+            <a href="@Url.Action("registration","auth")" id="regis">Qeydiyyatdan keçin</a>
+            <p> Elanlarınızı izləmək və idarə etmənin ən rahat yolu şəxsi kabinetinizin yaradılmasıdır...</p>
+            <h1>Meb<span id="little">elan</span></h1>
+        </div>
+        <div class="all-login">
+            <div class="lo">
+                <form method="post">
+                    <h1>Daxil olmaq</h1>
+                    <h4>E-mail və ya telefon nömrəniz:</h4>
+                    <input asp-for="Email" class="top-but" type="text">
+                    <h4>Şifrəniz:</h4>
+                    <div class="paswo">
+                        <input asp-for="Password" id="mine" type="password">
+                        <i class="eye far fa-eye" id="togyourpass"></i>
+                    </div>
+
+
+                    <div class="bottom-log">
+                        <div class="xatir ">
+                            <span>Məni xatırla <input asp-for="RememberMe" type="checkbox"></span>
+                            <a href="#">Şifrənizi unutmusunuz?</a>
+                        </div>
+                        <p>Hesabınız yoxdur? <a href="@Url.Action("registration","auth")"> Yeni hesab yaradın..</a></p>
+                        <button style="text-align:center; width:100%;background-color:orange; border-radius:15px; border:none; font-size:22px; color:white; outline:none;" type="submit">Daxil Ol</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
