@@ -2,150 +2,155 @@
     ViewData["Title"] = "Home Page";
 }
 @model HomeVM
-<section class="firstslider">
-    <div class="fff">
-        @foreach (var fslider in Model.FirstSliders)
+<style>
+    solos a:hover{
+        color:orange;
+    }
+    </style >
+
+
+    <section class="firstslider" >
+    <div class="fff" >
+    @foreach (var fslider in Model.FirstSliders)
         {
-            <div class="fslide">
-                <div class="row">
-                    <div class="col-lg-6 col-sm-6 col-md-6 leftpart">
-                        <h3>@fslider.TopHeader</h3>
-                        <h1>@fslider.Header</h1>
-                        <h5>
-                            @fslider.SlideDescription
-                        </h5>
-                        <a href="@fslider.SlideAdv">@fslider.SlideButton</a>
-                    </div>
-                    <div class="col-lg-6 col-sm-6 col-md-6">
-                        <img src="~/img/@fslider.PhotoURL" alt="">
-                    </div>
-                </div>
-            </div>
+             <div class="fslide" >
+    <div class="row" >
+    <div class="col-lg-6 col-sm-6 col-md-6 leftpart" >
+    <h3 >@fslider.TopHeader </h3 >
+    <h1 >@fslider.Header </h1 >
+    <h5 >
+    @fslider.SlideDescription
+    </h5 >
+    <a href="@fslider.SlideAdv" >@fslider.SlideButton </a >
+    </div >
+    <div class="col-lg-6 col-sm-6 col-md-6" >
+    <img src="~/img/@fslider.PhotoURL" alt="" >
+    </div >
+    </div >
+    </div >
 
         }
-
-    </div>
-</section>
-<section class="brandslider mt-5 ">
-    <div class="container">
-        <div class="eee">
-            @foreach (var category in Model.Categories)
+    </div >
+    </section >
+    <section class="brandslider mt-5 " >
+    <div class="container" >
+    <div class="eee" >
+    @foreach (var category in Model.Categories)
             {
-                <div class="col-lg-3 col-sm-4 col-md-4">
-                    <a href="@Url.Action("index","advertisement", new {categoryID=category.ID})" style="color:black; text-decoration:none;">
+                 <div class="col-lg-3 col-sm-4 col-md-4" >
+    <a href="@Url.Action("index","advertisement", new {categoryID=category.ID})" style="color:black; text-decoration:none;" >
 
-                        <div class="circle"></div>
-                        <div class="brand">
-                            <img src="~/img/@category.CategoryPhotoSlide" alt="">
-                            <h5>@category.Name</h5>
-                        </div>
-                    </a>
+    <div class="circle" > </div >
+    <div class="brand" >
+    <img src="~/img/@category.CategoryPhotoSlide" alt="" >
+    <h5 >@category.Name </h5 >
+    </div >
+    </a >
 
-                </div>
+    </div >
 
             }
+    </div >
+    </div >
+    </section >
+    <section class="wholeadvert pb-3 " >
+    <div class="solos" style="padding-top: 50px; text-align: center;" >
+    <h1 style="font-size: 60px;" class="mb-4" > Elanlar</h1 >
+    <ul style=" display: flex; justify-content: center;" >
+    <li style="list-style: none;
+    padding: 0 15px;">
+    <a style=" color: black; text-decoration: none; transition: 0.2s; font-size: 30px; :hover{color:orange} " href="#" > Yeni elanlar</a >
+    </li >
+    <li style="list-style: none;
+    padding: 0 15px;">
+    <a style=" color: black; text-decoration: none; transition: 0.2s; font-size: 30px;" href="#" > Mebel sexləri</a >
+    </li >
+    <li style="list-style: none; padding: 0 15px;" >
+    <a style=" color: black; text-decoration: none; transition: 0.2s; font-size: 30px;" href="#" > Fabrik mebelləri</a >
+    </li >
 
+    </ul >
+    </div >
+    <div class="container" >
+    <div class="add-all" >
+    <div class="home-detailed-search" >
+    <a class="big" href="/advertisement" > Ətraflı Axtarış</a >
+    <a class="small" href="/advertisement/responsiveindex" > Ətraflı Axtarış</a >
 
-        </div>
-    </div>
-</section>
-<section class="addvert pb-3">
-    <div class="top-add mb-3">
-        <h1 class="mb-4">Elanlar</h1>
-        <ul>
-            <li>
-                <a href="#">Yeni elanlar</a>
-            </li>
-            <li>
-                <a href="#">Mebel sexləri</a>
-            </li>
-            <li>
-                <a href="#">Fabrik mebelləri</a>
-            </li>
+    </div >
 
-        </ul>
-    </div>
-    <div class="container">
-        <div class="add-all">
-            <div class="home-detailed-search">
-                <a class="big" href="/advertisement">Ətraflı Axtarış</a>
-                <a class="small" href="/advertisement/responsiveindex">Ətraflı Axtarış</a>
-
-            </div>
-
-            <div class="row ">
-                @foreach (var advert in Model.Advertisements)
+    <div class="row " >
+    @foreach (var advert in Model.Advertisements)
                 {
-                    <div class="col-lg-4 col-lg-4 col-sm-6 col-md-4 col-6">
-                        <a href="/advertisement/details/@advert.ID">
-                            <div class="adv-frame">
-                                <div class="adv-photo">
-                                    <img src="~/img/@advert.AdvertisementPictures[0].Picture.URL" alt="">
-                                    <img class="sec-photo" src="~/img/@advert.AdvertisementPictures[1].Picture.URL" alt="">
-                                    <div class="advert-price" style="width:50%">
-                                        <h5 style="white-space:nowrap; position:absolute; bottom:10%; color:white; right:0%; padding:7px 10px; background-color:orange; border-radius:10px 0 0 10px;">@advert.Price ₼</h5>
-                                    </div>
-                                </div>
-                                <div class="adv-desc">
-                                    <h5>
-                                        @advert.AdvertName
-                                    </h5>
-                                    <h6>
-                                        İstehsalçı :
-                                        <a href="#">@advert.Stores.Name</a>
-                                    </h6><br>
-                                    <p style="opacity:0.5;">@advert.Posttime.ToShortDateString(), @advert.Cities.CityName</p>
-                                </div>
-                            </div>
-                        </a>
+                     <div class="col-lg-4 col-lg-4 col-sm-6 col-md-4 col-6" >
+    <a href="/advertisement/details/@advert.ID" >
+    <div class="adv-frame" >
+    <div class="adv-photo" >
+    <img src="~/img/@advert.AdvertisementPictures[0].Picture.URL" alt="" >
+    <img class="sec-photo" src="~/img/@advert.AdvertisementPictures[1].Picture.URL" alt="" >
+    <div class="advert-price" style="width:50%" >
+    <h5 style="white-space:nowrap; position:absolute; bottom:10%; color:white; right:0%; padding:7px 10px; background-color:orange; border-radius:10px 0 0 10px;" >@advert.Price ₼</h5 >
+    </div >
+    </div >
+    <div class="adv-desc" >
+    <h5 >
+    @advert.AdvertName
+    </h5 >
+    <h6 >
+    İstehsalçı :
+    <a href="#" >@advert.Stores.Name </a >
+    </h6 > <br >
+    <p style="opacity:0.5;" >@advert.Posttime.ToShortDateString(), @advert.Cities.CityName </p >
+    </div >
+    </div >
+    </a >
 
-                    </div>
+    </div >
                 }
-                <a href="/advertisement" style="outline:none; justify-content:center" class=" loadmorebut">Daha çox</a>
+    <a href="/advertisement" style="outline:none; justify-content:center" class=" loadmorebut" > Daha çox</a >
 
-            </div>
+    </div >
 
-        </div>
-    </div>
-</section>
-<section id="disa" style="text-align: center;" class="discount">
-    <div class="container">
-        <h1>Endirimli məhsullar</h1>
-        <div class="row">
-            @foreach (var discount in Model.Discounts)
+    </div >
+    </div >
+    </section >
+    <section id="disa" style="text-align: center;" class="discount" >
+    <div class="container" >
+    <h1 > Endirimli məhsullar</h1 >
+    <div class="row" >
+    @foreach (var discount in Model.Discounts)
             {
-                <div id="first-dis" style="transition: .3s;" class=" mb-4 left col-lg-6 col-md-6 col-sm-12">
-                    <div class="percent">
-                        <h5>@discount.Percent%</h5>
-                    </div>
-                    <img src="~/img/@discount.PhotoURL" alt="">
-                    <div class="dis-buy">
-                        <a href="#">Elana get</a>
-                    </div>
-                    <div class="dis-price">
-                        <span class="cross">@discount.LastPrice AZN</span>
-                        <span class="org">@discount.CurrentPrice AZN</span>
-                    </div>
+                 <div id="first-dis" style="transition: .3s;" class=" mb-4 left col-lg-6 col-md-6 col-sm-12" >
+    <div class="percent" >
+    <h5 >@discount.Percent %</h5 >
+    </div >
+    <img src="~/img/@discount.PhotoURL" alt="" >
+    <div class="dis-buy" >
+    <a href="#" > Elana get</a >
+    </div >
+    <div class="dis-price" >
+    <span class="cross" >@discount.LastPrice AZN</span >
+    <span class="org" >@discount.CurrentPrice AZN</span >
+    </div >
 
-                </div>
+    </div >
             }
+    </div >
 
-        </div>
-
-    </div>
-</section>
-<section class="Marka-slider">
-    <div class="mmm">
-        @foreach (var brand in Model.Brands)
+    </div >
+    </section >
+    <section class="Marka-slider" >
+    <div class="mmm" >
+    @foreach (var brand in Model.Brands)
         {
-            <div class="mark">
-                <div class="col-3">
-                    <a href="#"></a>
-                    <img src="~/Img/@brand.BrandURL" alt="">
+             <div class="mark" >
+    <div class="col-3" >
+    <a href="#" > </a >
+    <img src="~/Img/@brand.BrandURL" alt="" >
 
-                </div>
-            </div>
+    </div >
+    </div >
         }
-    </div>
+    </div >
 
-</section>
+    </section >

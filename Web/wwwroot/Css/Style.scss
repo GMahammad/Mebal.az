@@ -580,9 +580,9 @@
 
 }
 
-.addvert {
+.wholeadvert {
     height: 100%;
-    .top-add {
+    .solos{
         padding-top: 50px;
         text-align: center;
         h1 {
@@ -601,13 +601,11 @@
 
                 a {
                     color: black;
-                    opacity: 80%;
                     text-decoration: none;
                     transition: 0.2s;
                     font-size: 30px;
                     &:hover {
                         color: orange;
-                        opacity: 100%;
                     }
 
                 }
@@ -615,7 +613,7 @@
         }
     }
 }
-
+.
 .adv-frame {
    position: relative;
     margin: 15px 5px;

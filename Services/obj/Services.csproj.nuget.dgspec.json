@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\acer\\source\\repos\\Mebelan.az\\Services\\Services.csproj": {}
+    "C:\\Users\\User\\Desktop\\Mebelan.az\\Services\\Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\acer\\source\\repos\\Mebelan.az\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\User\\Desktop\\Mebelan.az\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\source\\repos\\Mebelan.az\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Mebelan.az\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\acer\\source\\repos\\Mebelan.az\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\source\\repos\\Mebelan.az\\DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\Mebelan.az\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Mebelan.az\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\acer\\source\\repos\\Mebelan.az\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\acer\\source\\repos\\Mebelan.az\\Entities\\Entities.csproj"
+              "C:\\Users\\User\\Desktop\\Mebelan.az\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Mebelan.az\\Entities\\Entities.csproj"
               }
             }
           }
@@ -82,17 +82,17 @@
         }
       }
     },
-    "C:\\Users\\acer\\source\\repos\\Mebelan.az\\Entities\\Entities.csproj": {
+    "C:\\Users\\User\\Desktop\\Mebelan.az\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\source\\repos\\Mebelan.az\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Mebelan.az\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\acer\\source\\repos\\Mebelan.az\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\source\\repos\\Mebelan.az\\Entities\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\Mebelan.az\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Mebelan.az\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -152,17 +152,17 @@
         }
       }
     },
-    "C:\\Users\\acer\\source\\repos\\Mebelan.az\\Services\\Services.csproj": {
+    "C:\\Users\\User\\Desktop\\Mebelan.az\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\source\\repos\\Mebelan.az\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Mebelan.az\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\acer\\source\\repos\\Mebelan.az\\Services\\Services.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\source\\repos\\Mebelan.az\\Services\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\Mebelan.az\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Mebelan.az\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -176,11 +176,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\acer\\source\\repos\\Mebelan.az\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\acer\\source\\repos\\Mebelan.az\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\User\\Desktop\\Mebelan.az\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Mebelan.az\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\acer\\source\\repos\\Mebelan.az\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\acer\\source\\repos\\Mebelan.az\\Entities\\Entities.csproj"
+              "C:\\Users\\User\\Desktop\\Mebelan.az\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Mebelan.az\\Entities\\Entities.csproj"
               }
             }
           }
